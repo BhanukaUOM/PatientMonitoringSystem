@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>  
+	<title>Patient Monitor System G18 Project</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<div id="readings"></div> 
+</body><script>
+jQuery().ready(function(){
+    setInterval("getResult()",2000); //set theinterval for the update
+});
+function getResult(){   
+    jQuery.post("index_data.php",function( data ) {
+        jQuery("#readings").html(data);
+    });
+}
+</script>
+	 
+</body>
+</html>
+
